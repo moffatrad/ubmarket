@@ -1,0 +1,10 @@
+✅ Database connected successfully
+Using existing user: alice@ub.bw
+Using existing user: brian@ub.bw
+Using existing user: chipo@ub.bw
+Listing already exists: Introduction to Economics Textbook
+Listing already exists: Single Room Near UB Main Campus
+Listing already exists: Experienced Math Tutor for High School
+Listing already exists: Desk Lamp + Study Chair Bundle
+Listing already exists: Organic Chemistry Lecture Notes
+Demo seed complete.

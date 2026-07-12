@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell an Item | UBMarket</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body>
+  <header class="header" id="mainHeader">
+    <div class="container header-content">
+      <div class="logo"><a href="/"><span class="logo-icon">📚</span><span class="logo-text">UB<span>Market</span></span></a></div>
+      <nav class="nav-links" id="navLinks">
+        <a href="/pages/browse.html" class="nav-link">Browse</a>
+        <a href="/pages/post.html" class="nav-link">Sell</a>
+        <a href="/pages/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/pages/inbox.html" class="nav-link">Messages</a>
+      </nav>
+      <div class="header-actions">
+        <div id="authButtons">
+          <a href="/pages/login.html" class="btn btn-outline btn-sm">Log In</a>
+          <a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a>
+        </div>
+        <div id="userMenu" style="display:none;">
+          <div class="user-dropdown">
+            <button class="user-avatar-btn" id="userAvatarBtn">
+              <img src="/assets/img/default-avatar.png" alt="User avatar" id="userAvatar" />
+              <span id="userName">User</span>
+            </button>
+            <div class="dropdown-menu" id="userDropdown">
+              <a href="/pages/profile.html">Profile</a>
+              <a href="/pages/dashboard.html">Dashboard</a>
+              <a href="#" id="logoutBtn">Log Out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Sell an Item</h1>
+      <p>Create a new listing and reach fellow UB students.</p>
+    </section>
+
+    <section class="page-content" id="postPage">
+      <div class="post-card">
+        <form id="postForm" class="listing-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="textbook">Textbook</option>
+                <option value="room">Room</option>
+                <option value="tutor">Tutor</option>
+                <option value="general">General</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input id="title" name="title" type="text" required placeholder="e.g. Used Calculus Textbook" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="5" required placeholder="Describe your listing..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="price">Price (BWP)</label>
+              <input id="price" name="price" type="number" step="0.01" min="0" required placeholder="0.00" />
+            </div>
+            <div class="form-group">
+              <label for="condition">Condition</label>
+              <select id="condition" name="condition" required>
+                <option value="new">New</option>
+                <option value="like-new">Like New</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+                <option value="poor">Poor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="courseCode">Course Code</label>
+              <input id="courseCode" name="courseCode" type="text" placeholder="Optional" />
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input id="author" name="author" type="text" placeholder="Optional" />
+            </div>
+            <div class="form-group">
+              <label for="edition">Edition</label>
+              <input id="edition" name="edition" type="text" placeholder="Optional" />
+            </div>
+          </div>
+
+          <div id="roomFields" class="category-fields hidden">
+            <h3>Room Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input id="location" name="location" type="text" placeholder="e.g. UB Main Campus" />
+              </div>
+              <div class="form-group">
+                <label for="bedrooms">Bedrooms</label>
+                <input id="bedrooms" name="bedrooms" type="number" min="1" value="1" />
+              </div>
+              <div class="form-group">
+                <label for="furnished">Furnished</label>
+                <select id="furnished" name="furnished">
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="availableFrom">Available From</label>
+              <input id="availableFrom" name="availableFrom" type="date" />
+            </div>
+          </div>
+
+          <div id="tutorFields" class="category-fields hidden">
+            <h3>Tutor Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="subjects">Subjects</label>
+                <input id="subjects" name="subjects" type="text" placeholder="Math, Physics, Chemistry" />
+              </div>
+              <div class="form-group">
+                <label for="ratePerHour">Rate per Hour (BWP)</label>
+                <input id="ratePerHour" name="ratePerHour" type="number" step="0.01" min="0" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bio">Tutor Bio</label>
+              <textarea id="bio" name="bio" rows="4" placeholder="Tell students about your tutoring experience"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="images">Listing Images</label>
+            <input id="images" name="images" type="file" accept="image/*" multiple />
+            <p class="hint">You can upload up to 5 images (JPEG, PNG, WEBP, GIF).</p>
+          </div>
+
+          <div class="form-group form-error" id="postError" style="display:none;"></div>
+          <div class="form-group form-success" id="postSuccess" style="display:none;"></div>
+
+          <div class="form-actions">
+            <button type="submit" id="submitPostBtn" class="btn btn-primary">Create Listing</button>
+            <a href="/pages/dashboard.html" class="btn btn-outline">View Dashboard</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 UBMarket</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script src="/assets/js/post.js"></script>
+</body>
+</html>

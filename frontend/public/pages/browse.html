@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Listings | UBMarket</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo"><a href="/"><span class="logo-icon">📚</span><span class="logo-text">UB<span>Market</span></span></a></div>
+      <nav class="nav-links">
+        <a href="/pages/browse.html" class="nav-link">Browse</a>
+        <a href="/pages/post.html" class="nav-link">Sell</a>
+        <a href="/pages/dashboard.html" class="nav-link">Dashboard</a>
+        <a href="/pages/inbox.html" class="nav-link">Messages</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/pages/login.html" class="btn btn-outline btn-sm">Log In</a>
+        <a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Browse Listings</h1>
+      <p>Search and filter listings across all categories.</p>
+    </section>
+
+    <section class="filter-panel" id="browsePage">
+      <div class="filter-grid">
+        <div class="form-group">
+          <label for="searchInput">Search</label>
+          <input id="searchInput" type="text" placeholder="Search listings..." />
+        </div>
+        <div class="form-group">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="">All</option>
+            <option value="textbook">Textbook</option>
+            <option value="room">Room</option>
+            <option value="tutor">Tutor</option>
+            <option value="general">General</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="priceMin">Min Price</label>
+          <input id="priceMin" type="number" min="0" placeholder="0" />
+        </div>
+        <div class="form-group">
+          <label for="priceMax">Max Price</label>
+          <input id="priceMax" type="number" min="0" placeholder="9999" />
+        </div>
+        <div class="form-group">
+          <label for="sortSelect">Sort By</label>
+          <select id="sortSelect">
+            <option value="created_at">Newest</option>
+            <option value="price">Price</option>
+          </select>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+        <button id="clearFilters" class="btn btn-outline">Clear</button>
+      </div>
+      <p id="resultsCount" class="results-count">Loading results...</p>
+    </section>
+
+    <section class="listings-grid" id="listingsContainer"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 UBMarket</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/listings.js"></script>
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

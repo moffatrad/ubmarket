@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UBMarket - Student Marketplace</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="mainHeader">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <span class="logo-icon">📚</span>
+                        <span class="logo-text">UB<span>Market</span></span>
+                    </a>
+                </div>
+                
+                <nav class="nav-links" id="navLinks">
+                    <a href="/pages/browse.html" class="nav-link">Browse</a>
+                    <a href="/pages/post.html" class="nav-link">Sell</a>
+                    <a href="/pages/dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="/pages/inbox.html" class="nav-link inbox-link">
+                        Messages
+                        <span class="badge" id="unreadBadge" style="display: none;">0</span>
+                    </a>
+                </nav>
+
+                <div class="header-actions">
+                    <div id="authButtons">
+                        <a href="/pages/login.html" class="btn btn-outline btn-sm">Log In</a>
+                        <a href="/pages/register.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    </div>
+                    <div id="userMenu" style="display: none;">
+                        <div class="user-dropdown">
+                            <button class="user-avatar-btn" id="userAvatarBtn">
+                                <img src="/assets/img/default-avatar.png" alt="User avatar" id="userAvatar" />
+                                <span id="userName">User</span>
+                            </button>
+                            <div class="dropdown-menu" id="userDropdown">
+                                <a href="/pages/profile.html">Profile</a>
+                                <a href="/pages/dashboard.html">Dashboard</a>
+                                <a href="#" id="logoutBtn">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>UB Student Marketplace</h1>
+                    <p class="hero-subtitle">Buy, sell, and trade textbooks, rooms, and tutoring — all within the UB community.</p>
+                    <div class="hero-actions">
+                        <a href="/pages/browse.html" class="btn btn-primary btn-lg">Browse Listings</a>
+                        <a href="/pages/post.html" class="btn btn-outline btn-lg">Sell Something</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">What are you looking for?</h2>
+                <div class="category-grid">
+                    <a href="/pages/browse.html?category=textbook" class="category-card" data-category="textbook">
+                        <div class="category-icon">📖</div>
+                        <h3>Textbooks</h3>
+                        <p>Buy and sell used textbooks</p>
+                        <span class="count" id="textbookCount">0 listings</span>
+                    </a>
+                    <a href="/pages/browse.html?category=room" class="category-card" data-category="room">
+                        <div class="category-icon">🏠</div>
+                        <h3>Rooms</h3>
+                        <p>Find off-campus accommodation</p>
+                        <span class="count" id="roomCount">0 listings</span>
+                    </a>
+                    <a href="/pages/browse.html?category=tutor" class="category-card" data-category="tutor">
+                        <div class="category-icon">🧑‍🏫</div>
+                        <h3>Tutors</h3>
+                        <p>Find peer tutors or offer tutoring</p>
+                        <span class="count" id="tutorCount">0 listings</span>
+                    </a>
+                    <a href="/pages/browse.html?category=general" class="category-card" data-category="general">
+                        <div class="category-icon">🛍️</div>
+                        <h3>General</h3>
+                        <p>Electronics, stationery & more</p>
+                        <span class="count" id="generalCount">0 listings</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Listings -->
+        <section class="featured-listings">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Listings</h2>
+                    <a href="/pages/browse.html" class="view-all">View All →</a>
+                </div>
+                <div class="listings-grid" id="featuredListings">
+                    <!-- Listings will be rendered by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Listings -->
+        <section class="recent-listings">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Listings</h2>
+                    <a href="/pages/browse.html" class="view-all">View All →</a>
+                </div>
+                <div class="listings-grid" id="recentListings">
+                    <!-- Listings will be rendered by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">UB<span>Market</span></span>
+                    <p class="footer-desc">University of Botswana Student Marketplace</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Marketplace</h4>
+                        <a href="/pages/browse.html?category=textbook">Textbooks</a>
+                        <a href="/pages/browse.html?category=room">Rooms</a>
+                        <a href="/pages/browse.html?category=tutor">Tutors</a>
+                        <a href="/pages/browse.html">All Listings</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Account</h4>
+                        <a href="/pages/login.html">Log In</a>
+                        <a href="/pages/register.html">Sign Up</a>
+                        <a href="/pages/dashboard.html">Dashboard</a>
+                        <a href="/pages/profile.html">Profile</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Report an Issue</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UBMarket. All rights reserved. University of Botswana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/listings.js"></script>
+</body>
+</html>
